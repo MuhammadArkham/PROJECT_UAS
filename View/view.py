@@ -1,23 +1,21 @@
 class View:
     def tampilkan_menu(self):
-        print("""
-=== TIKET INDONESIA VS BAHRAIN ===
-1. Lihat Tiket
-2. Beli Tiket
-3. Cek Pemesanan
-4. Keluar""")
+        print("\n=== TIKET INDONESIA VS BAHRAIN ===")
+        print("1. Lihat Tiket")
+        print("2. Beli Tiket")
+        print("3. Cek Pemesanan")
+        print("4. Keluar")
     
     def tampilkan_tiket(self, tiket):
         print("\n=== DAFTAR TIKET ===")
         print("Kategori  |    Harga    | Stok")
-        print("-" * 35)
+        print("-" * 40)
         for kategori, info in tiket.items():
-            print(f"{kategori:<9} | Rp {info['harga']:,} | {info['stok']}")
+            print(f"{kategori:<9} | Rp {info['harga']:>9,} | {info['stok']:>4}")
     
     def tampilkan_etiket(self, id_pesan, detail):
-        print(f"""
-=== E-TIKET ===
-ID Pemesanan : {id_pesan}
-Jenis Tiket  : {detail['jenis']}
-Jumlah Tiket : {detail['jumlah']}
-Total Bayar  : Rp {detail['total']:,}""")
+        print("\n=== E-TIKET ===")
+        print(f"ID Pemesanan : {id_pesan}")
+        print(f"Jenis Tiket  : {detail['jenis']}")
+        print(f"Jumlah Tiket : {detail['jumlah']}")
+        print(f"Total Bayar  : Rp {detail['total']:,}")
