@@ -1,7 +1,6 @@
 from Data.data import Data
 from View.view import View
 from Process.process import Process
-
 def main():
     data = Data()
     view = View()
@@ -21,8 +20,8 @@ def main():
             print("\nTerima kasih telah menggunakan layanan kami!")
             break
         else:
-            print("Error: Pilihan tidak valid!")
-            
+            print("\nError: Pilihan tidak valid!")
+        
         input("\nTekan Enter untuk melanjutkan...")
 
 if __name__ == "__main__":
