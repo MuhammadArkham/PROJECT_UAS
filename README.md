@@ -177,15 +177,6 @@ if __name__ == "__main__":
 
 ---
 
-### **Cara Kerja Program:**  
-1. Pengguna menjalankan program dan disajikan menu utama.  
-2. Jika memilih "1", daftar tiket akan ditampilkan.  
-3. Jika memilih "2", pengguna bisa memesan tiket dengan memilih kategori dan jumlah tiket yang diinginkan.  
-4. Setelah berhasil memesan, pengguna mendapatkan e-tiket dengan ID pemesanan.  
-5. Opsi "3" memungkinkan pengguna untuk memeriksa pemesanan berdasarkan ID.  
-6. Program berakhir saat pengguna memilih "4".  
-
-Program ini modular, sehingga mudah diperluas untuk menambah fitur seperti pembayaran atau kategori tiket tambahan.
-
-
+### **Link YouTube video dokumentasi** 
+https://youtu.be/3YViJte-XjI?si=PerrHycSgakW4e3r
 
