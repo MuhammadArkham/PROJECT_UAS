@@ -6,7 +6,11 @@ class Process:
     def validasi_input(self, prompt, jenis="angka"):
         while True:
             try:
-                nilai = input(prompt)
+                nilai = input(prompt).strip()
+                if not nilai:
+                    print("Error: Input tidak boleh kosong!")
+                    continue
+                    
                 if jenis == "angka":
                     nilai = int(nilai)
                     if nilai <= 0:
@@ -22,17 +26,19 @@ class Process:
                 print("Error: Input tidak valid!")
 
     def pesan_tiket(self):
-        jenis = self.validasi_input("Masukkan jenis tiket: ", "jenis_tiket")
+        self.view.tampilkan_tiket(self.data.tiket)
+        jenis = self.validasi_input("\nMasukkan jenis tiket: ", "jenis_tiket")
         jumlah = self.validasi_input("Masukkan jumlah tiket: ", "angka")
 
         if jumlah > self.data.tiket[jenis]['stok']:
-            print(f"Error: Stok tidak cukup! (Tersedia: {self.data.tiket[jenis]['stok']})")
+            print(f"\nMaaf, stok tidak mencukupi. Stok tersedia: {self.data.tiket[jenis]['stok']}")
             return
 
         total = self.data.tiket[jenis]['harga'] * jumlah
         print(f"\nTotal Bayar: Rp {total:,}")
 
-        if input("Lanjutkan pemesanan (y/t)? ").lower() == 'y':
+        konfirmasi = input("\nLanjutkan pemesanan (ya/tidak)? ").lower()
+        if konfirmasi == 'ya':
             id_pesan = f"P{len(self.data.pemesanan) + 1:03d}"
             self.data.pemesanan[id_pesan] = {
                 'jenis': jenis,
@@ -42,11 +48,11 @@ class Process:
             self.data.tiket[jenis]['stok'] -= jumlah
             self.view.tampilkan_etiket(id_pesan, self.data.pemesanan[id_pesan])
         else:
-            print("Pemesanan dibatalkan.")
+            print("\nPemesanan dibatalkan.")
 
     def cek_pemesanan(self):
-        id_pesan = input("Masukkan ID pemesanan: ").strip().upper()
+        id_pesan = input("\nMasukkan ID pemesanan: ").strip().upper()
         if id_pesan in self.data.pemesanan:
             self.view.tampilkan_etiket(id_pesan, self.data.pemesanan[id_pesan])
         else:
-            print("Error: Pemesanan tidak ditemukan!")
+            print("\nMaaf, pemesanan tidak ditemukan!")
