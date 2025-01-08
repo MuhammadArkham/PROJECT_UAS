@@ -5,9 +5,8 @@ Mata kuliah :Bahasa pemrograman
 
 NIM : 312410545
 
-
-
-
+### **Link YouTube video dokumentasi**
+https://youtu.be/3YViJte-XjI?si=PerrHycSgakW4e3r
 ## **Penjelasan Program**:
 
 
@@ -175,8 +174,5 @@ if __name__ == "__main__":
   - Opsi 2: Proses pembelian tiket.  
   - Opsi 3: Cek status pemesanan.  
 
----
 
-### **Link YouTube video dokumentasi** 
-https://youtu.be/3YViJte-XjI?si=PerrHycSgakW4e3r
 
